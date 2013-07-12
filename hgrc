@@ -1,0 +1,23 @@
+[ui]
+username = Alan Ward <alan.ward@bts-s2.com>
+ 
+[extensions]
+color=
+hgk=
+fetch=
+mq=
+hgext.extdiff=
+rebase=
+histedit= /opt/hg/histedit/hg_histedit.py
+record=
+hgshelve= /opt/hg/hgshelve/hgshelve.py
+graphlog=
+ 
+[extdiff]
+cmd.meld=
+
+[defaults]
+# Be careful with this - it can cause mercurial to throw the 'cannot partially commit a merge' error
+#commit = -X "CSipSimple/jni/*" -X "CSipSimple/.classpath" -X "CSipSimpleVideoPlugin/project.properties"
+[alias]
+standup = !hg log -u alan.ward@bts-s2.com -d ">`date --date "00:00 yesterday" +%x`"
