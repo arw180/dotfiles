@@ -20,6 +20,9 @@ Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'jnurmine/Zenburn'
 " Rainbow colors for parenthesis Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'kien/rainbow_parentheses.vim'
+" Match xml tags
+Bundle 'edsono/vim-matchit'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NORMAL CONFIG
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
