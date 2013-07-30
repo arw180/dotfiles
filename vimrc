@@ -20,8 +20,15 @@ Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'jnurmine/Zenburn'
 " Rainbow colors for parenthesis Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'kien/rainbow_parentheses.vim'
-" Match xml tags
+" Match xml tags (shift-%)
 Bundle 'edsono/vim-matchit'
+" Syntax checking
+" :SyntasticInfo for help
+Bundle 'scrooloose/syntastic'
+" Python autocomplete
+Bundle 'davidhalter/jedi-vim'
+" Comment code
+Bundle 'scrooloose/nerdcommenter'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NORMAL CONFIG
@@ -103,3 +110,10 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntastic
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use pylint
+let g:syntastic_python_checkers = ['pylint']
+" Use jshint (uses ~/.jshintrc)
+let g:syntastic_javascript_checkers = ['jshint']
