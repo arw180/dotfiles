@@ -1,0 +1,3 @@
+# vcprompt - shows the branch name when inside a git or hg repo
+# https://github.com/djl/vcprompt.git
+export PS1='\u@\h:\w \e[0;32m$(vcprompt -f %b)\e[m: '
