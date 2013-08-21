@@ -13,9 +13,36 @@
   yep = !git pull --rebase && git remote prune origin
   standup = !git lg --since='yesterday' --author=`git config user.email`
   su = !git standup
+  out = log origin/master..HEAD
 
 [core]
   editor = vim
+
+[color]
+    ui = always
+
+[color "branch"]
+    current = yellow bold
+    local = green bold
+    remote = cyan bold
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
+
+[color "status"]
+    added = green bold
+    changed = yellow bold
+    untracked = red bold
+
+[diff]
+    tool = kdiff3
+
+[difftool]
+    prompt = false
 
 [github]
   user = arw180
