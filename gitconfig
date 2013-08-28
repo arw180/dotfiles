@@ -13,7 +13,7 @@
   yep = !git pull --rebase && git remote prune origin
   standup = !git lg --since='yesterday' --author=`git config user.email`
   su = !git standup
-  out = log origin/master..HEAD
+  out = !git log `git rev-parse --symbolic-full-name @{u}`..`git rev-parse --abbrev-ref HEAD`
   unstage = reset HEAD --
   last = log -1 HEAD
 
