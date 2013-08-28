@@ -48,3 +48,6 @@
 
 [github]
   user = arw180
+
+[pull]
+	rebase = true
