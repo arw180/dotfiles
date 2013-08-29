@@ -4,6 +4,8 @@
 #     . ~/.bash_settings
 #     fi
 #
-# vcprompt - shows the branch name when inside a git or hg repo
-# https://github.com/djl/vcprompt.git
-export PS1='\u@\h:\w \e[0;32m$(vcprompt -f %b)\e[m: '
+# auto complete for git - requires script in home directory:
+# curl https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
+source ~/.git-prompt.sh
+# show current git branch name in the prompt
+PS1='$\u@\h:\w\[\e[0;32m\]$(__git_ps1)\[\e[m\]:\$ '
