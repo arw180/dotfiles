@@ -6,12 +6,19 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
 " Vim plugin manager
+" git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+" add this .vimrc file to your home directory (~/.vimrc)
+" launch vim and run :BundleInstall to install all vim plugins
 Bundle 'gmarik/vundle'
 " Git wrapper
+" Gblame to see git blame info
+" :help fugitive
 Bundle 'tpope/vim-fugitive'
 " Mercurial wrapper
 Bundle 'phleet/vim-mercenary'
 " Full path fuzzy file, buffer, mru, tag, ... finder
+" :CtrlP or :CtrlP [path] to find a file
+" :help ctrlp-mappings
 Bundle 'kien/ctrlp.vim'
 Bundle 'greatghoul/vim-web-indent'
 " Comply with PEP8
@@ -23,12 +30,17 @@ Bundle 'kien/rainbow_parentheses.vim'
 " Match xml tags (shift-%)
 Bundle 'edsono/vim-matchit'
 " Syntax checking
+" Requires installing pylint, flake8, or pyflakes
+" :SyntasticCheck
+" :Errors to open error window
 " :SyntasticInfo for help
 Bundle 'scrooloose/syntastic'
 " Python autocomplete
 Bundle 'davidhalter/jedi-vim'
 " Comment code
 Bundle 'scrooloose/nerdcommenter'
+" Run other apps inside of vim
+Bundle 'vim-scripts/Conque-Shell'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NORMAL CONFIG
@@ -83,6 +95,7 @@ map <C-L> <C-W>l<C-W>_
 autocmd VimResized * :wincmd =
 
 let mapleader = ","
+" use ',,' to invoke CtrlP fuzzy file search
 nnoremap <silent> <leader><leader> :ClearCtrlPCache<cr>\|:CtrlP<cr>
 nnoremap <F2> :set invnumber<CR>
 " Remove trailing whitespace before saving files
