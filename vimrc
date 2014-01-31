@@ -40,7 +40,7 @@ Bundle 'davidhalter/jedi-vim'
 " Comment code
 Bundle 'scrooloose/nerdcommenter'
 " Run other apps inside of vim
-Bundle 'vim-scripts/Conque-Shell'
+Bundle 'carlobaldassi/ConqueTerm'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NORMAL CONFIG
