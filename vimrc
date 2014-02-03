@@ -31,6 +31,7 @@ Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'edsono/vim-matchit'
 " Syntax checking
 " Requires installing pylint, flake8, or pyflakes
+" Install gjslint for JavaScript
 " :SyntasticCheck
 " :Errors to open error window
 " :SyntasticInfo for help
@@ -128,5 +129,5 @@ au Syntax * RainbowParenthesesLoadBraces
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use pylint
 let g:syntastic_python_checkers = ['pylint']
-" Use jshint (uses ~/.jshintrc)
-let g:syntastic_javascript_checkers = ['jshint']
+" Use google's gjslint
+let g:syntastic_javascript_checkers = ['gjslint']
