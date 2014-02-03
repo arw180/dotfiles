@@ -42,6 +42,10 @@ Bundle 'davidhalter/jedi-vim'
 Bundle 'scrooloose/nerdcommenter'
 " Run other apps inside of vim
 Bundle 'carlobaldassi/ConqueTerm'
+" autopep8 utility
+" Requires installing autopep8
+" <F8> to run autopep8 on current python file
+Bundle 'tell-k/vim-autopep8'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NORMAL CONFIG
