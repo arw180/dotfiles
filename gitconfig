@@ -13,9 +13,12 @@
   yep = !git pull --rebase && git remote prune origin
   standup = !git lg --since='yesterday' --author=`git config user.email`
   su = !git standup
-  out = !git log `git rev-parse --symbolic-full-name @{u}`..`git rev-parse --abbrev-ref HEAD`
+  outgoing = !git log `git rev-parse --symbolic-full-name @{u}`..`git rev-parse --abbrev-ref HEAD`
+  out = !git outgoing
   unstage = reset HEAD --
   last = log -1 HEAD
+  incoming = !git log `git rev-parse --abbrev-ref HEAD`..`git rev-parse --symbolic-full-name @{u}`
+  in = !git incoming
 
 [core]
   editor = vim
