@@ -46,6 +46,14 @@ Bundle 'carlobaldassi/ConqueTerm'
 " Requires installing autopep8
 " <F8> to run autopep8 on current python file
 Bundle 'tell-k/vim-autopep8'
+" javascript syntax
+Bundle 'jelera/vim-javascript-syntax'
+" more javascript syntax
+Bundle "pangloss/vim-javascript"
+" indent guides
+Bundle 'nathanaelkane/vim-indent-guides'
+" Auto-add closing characters
+Bundle 'Raimondi/delimitMate'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NORMAL CONFIG
