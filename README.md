@@ -10,7 +10,7 @@ Requires GNU Stow
 
 
 This creates symlinks in your home directory to the files in `dotfiles`,
-which can remail under VCS
+which can remain under VCS
 
 # OS X Setup
 
