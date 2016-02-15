@@ -50,6 +50,7 @@ Plugin 'Raimondi/delimitMate'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+" Adds support for file type-specific settings in ~/.vim/after/ftplugin/
 filetype plugin indent on    " required
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
