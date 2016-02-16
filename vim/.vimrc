@@ -17,15 +17,13 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 " Full path fuzzy file, buffer, mru, tag, ... finder
 Plugin 'ctrlpvim/ctrlp.vim'
-" Comply with PEP8
-Plugin 'hynek/vim-python-pep8-indent'
 " Color scheme
 " Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
 " Rainbow colors for parenthesis Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'kien/rainbow_parentheses.vim'
-" Match xml tags (shift-%)
-Plugin 'edsono/vim-matchit'
+" Directory tree
+Plugin 'scrooloose/nerdtree'
 " Syntax checking
 " Requires installing pylint, flake8, or pyflakes
 " Install gjslint for JavaScript
@@ -47,6 +45,10 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'nathanaelkane/vim-indent-guides'
 " Auto-add closing characters
 Plugin 'Raimondi/delimitMate'
+" Status/tabline
+"Plugin 'bling/vim-airline'
+" airline themes
+"Plugin 'vim-airline/vim-airline-themes'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -64,8 +66,10 @@ set t_Co=256
 set background=dark
 " colorscheme zenburn
 colorscheme solarized
-" Bufffers with unsaved changes are hidden, not closed, when a new file is
-" opened
+" It hides buffers instead of closing them. This means that you can have
+" unwritten changes to a file and open a new file using :e, without being
+" forced to write or undo your changes first. Also, undo buffers and marks are
+" preserved while the buffer is open.
 set hidden
 " Status line shows possible completions of command line commands, file names,
 " etc. Allows cycling forward and backward in the list
@@ -110,7 +114,6 @@ nnoremap <F2> :set invnumber<CR>
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Working with tabs
-" todo
 " Only show filename in tab
 set guitablabel=%t
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -130,12 +133,6 @@ nnoremap <silent> <leader><leader> :ClearCtrlPCache<cr>\|:CtrlP<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RAINBOW PARENTHESES
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-":RainbowParenthesesToggle       " Toggle it on/off
-":RainbowParenthesesLoadRound    " (), the default when toggling
-":RainbowParenthesesLoadSquare   " []
-":RainbowParenthesesLoadBraces   " {}
-":RainbowParenthesesLoadChevrons " <>"
-"
 let g:rbpt_colorpairs = [
     \ ['brown',       'RoyalBlue3'],
     \ ['Darkblue',    'SeaGreen3'],
@@ -159,6 +156,7 @@ let g:rbpt_max = 16
 
 let g:rbpt_loadcmd_toggle = 0
 
+" Always on
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
@@ -167,7 +165,25 @@ au Syntax * RainbowParenthesesLoadBraces
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntastic
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Recommended settings:
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+" My own settings:
 " Use pylint
 let g:syntastic_python_checkers = ['pylint']
 " Use google's gjslint
 let g:syntastic_javascript_checkers = ['gjslint']
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NERDTree
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Toggle NERDTree with <C-n>
+map <C-n> :NERDTreeToggle<CR>
+" Close vim if the only window remaining is NERDTRee
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
