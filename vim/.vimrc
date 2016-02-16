@@ -49,6 +49,8 @@ Plugin 'Raimondi/delimitMate'
 "Plugin 'bling/vim-airline'
 " airline themes
 "Plugin 'vim-airline/vim-airline-themes'
+" Git gutter
+Plugin 'airblade/vim-gitgutter'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -187,3 +189,7 @@ let g:syntastic_javascript_checkers = ['gjslint']
 map <C-n> :NERDTreeToggle<CR>
 " Close vim if the only window remaining is NERDTRee
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" GitGutter
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <leader>gg :GitGutterToggle<CR>

@@ -98,6 +98,8 @@ Spelling:
 * `]s`: previous misspelled word
 * `z=`: see spelling suggestions
 
+* `:set ft?`: see the file type detected by vim
+
 ### vim-fugitive
 * `:Gblame` to see git blame info
 * `:help fugitive`
@@ -107,5 +109,29 @@ Spelling:
     can iterate over them and watch the file evolve
 * `:Git` to run any arbitrary command `:Git!` to open the output of a command
     in a temp file
+
+### rainbow-parenthesis
+* `:RainbowParenthesesToggle       " Toggle it on/off`
+* `:RainbowParenthesesLoadRound    " (), the default when toggling`
+* `:RainbowParenthesesLoadSquare   " []`
+* `:RainbowParenthesesLoadBraces   " {}`
+* `:RainbowParenthesesLoadChevrons " <>"`
+
+### ctrlp
+
+### nerdtree
+* `<C-n>`: toggle NERDTree
+
+### syntastic
+
+### nerdcommenter
+
+### jedi-vim
+
+### vim-indent-guides
+* `<Leader>ig`: toggle plugin
+
+### git-gutter
+* `<leader>gg`: toggle GitGutter
 
 ## zsh
