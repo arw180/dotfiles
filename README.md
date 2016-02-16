@@ -8,60 +8,55 @@ Requires GNU Stow
 2. `cd ~/dotfiles`
 3. `stow bash; stow git; stow tmux; stow zsh; stow vim`
 
-
 This creates symlinks in your home directory to the files in `dotfiles`,
 which can remain under VCS
 
-# OS X Setup
-
-## iterm2
-* `Command-?`: locate current cursor position
-* other features: instant replay, regex search, click to open urls, and jump to mark features
-* loading solarized colors into iterm2: https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized
-
-## key-bindings
-* map caps lock to control: http://www.emacswiki.org/emacs/MovingTheCtrlKey
-* bring iTerm2 forward to the front-most window (in Preferences-Keys, set as Option-t)
-* uncheck the iTerm2 bell sound in Profiles->Terminals->notifications
-
 # Cheat Sheet
 ## tmux
-Save tmux sessions: `<prefix> + ctrl-s` (tmux resurrect)
-Restore tmux sessions: `<prefix> + ctrl-r` (tmux resurrect)
-New named tmux session: `tmux new -s <mysession>`
-Attach to existing sessions: `tmux a`
-Detach from session: `<prefix> + d`
-List tmux sessions: `tmux ls`
-Kill session: `tmux kill-session -t <mysession>`
-
-Inside of tmux, hit `<prefix>` and then:
-
-`:source-file ~/.tmux.conf`: reload tmux config
-
-`[`: enter scrolling mode. Use standard vim keys to scroll around. Use
-`q` to quit scroll mode
+tmux `<prefix>` is `ctrl+b`. All commands below should be prefixed with `ctrl+b`
+unless otherwise noted (or if they are `tmux` CLI commands)
 
 Sessions:
+* Save tmux sessions: `ctrl+s` (tmux resurrect)
+* Restore tmux sessions: `ctrl+r` (tmux resurrect)
+* New named tmux session: `tmux new -s <mysession>`
+* Attach to existing sessions: `tmux a`
+* List tmux sessions: `tmux ls`
+* Kill session: `tmux kill-session -t <mysession>`
+
 * `s`: list sessions
 * `$`: name the current session
+* `d`: detach from session
+* `(`: move to previous session
+* `)`: move to next session
 
 Windows (tabs):
 * `c`: create window
-* `w`: list windows
+* `,`: rename current window
+* `<#>`: go to window number
 * `n`: next window
 * `p`: previous window
-* `<#>`: go to window number
-* `,`: name window
-* `&`: kill window
+* `w`: list windows
+* `&`: close current window
 
 Panes (splits):
 * `%`: vertical split
 * `"`: horizontal split
-* `o`: switch active pane
+* `o`: switch to next pane
 * `q`: show pane numbers (type number to go to that pane)
+* `z`: toggle pane zoom (make pane take 100% of screen)
 * `x`: kill pane
 * `{`: move current pain left
 * `}`: move current pain right
+* `;`: toggle last active pane
+* `<spacebar>`: toggle between pane layouts
+* `!`: convert pane to a window
+
+Custom:
+* `j`: resize pane down 10
+* `k`: resize pane up 10
+* `l`: resize pane left 10
+* `h`: resize pane right 10
 
 Synchronize panes (send same command to each pane in window):
 * `:setw synchronize-panes` (will toggle on/off)
@@ -73,11 +68,23 @@ Resize panes:
 * `:resize-pane -R 10`: resize current pane right by 10 cells
 
 Copy mode:
-* `[`: enter copy mode
-* (no prefix) `<enter>`: copy selected text and exit copy mode
+* `[`: enter copy mode (also for scrolling)
 * (no prefix) `<space>`: start selection
+* (no prefix) `<enter>`: copy selected text and exit copy mode
 * `]`: paste selected text
+* standard vim keys for moving around and searching
+* `q`: quit mode
+* `esc`: clear selection
+* `:show-buffer`: display buffer_0 contents
+* `:capture-pane`: copy entire visual contents of pane to a buffer
+* `:list-buffers`: show all buffers
+* `:choose-buffer`: list all buffers and paste selected
+* `:save-buffer buf.txt`: save contents of buffer to buf.txt
 
+Misc:
+* `:source-file ~/.tmux.conf`: reload tmux config
+* `:`: enter command mode
+* `?`: show shortcuts
 
 ## vim
 Comment/uncomment blocks:
@@ -135,3 +142,15 @@ Spelling:
 * `<leader>gg`: toggle GitGutter
 
 ## zsh
+
+# OS X Setup
+
+## iterm2
+* `Command-?`: locate current cursor position
+* other features: instant replay, regex search, click to open urls, and jump to mark features
+* loading solarized colors into iterm2: https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized
+
+## key-bindings
+* map caps lock to control: http://www.emacswiki.org/emacs/MovingTheCtrlKey
+* bring iTerm2 forward to the front-most window (in Preferences-Keys, set as Option-t)
+* uncheck the iTerm2 bell sound in Profiles->Terminals->notifications
