@@ -75,17 +75,16 @@ Misc:
 * `?`: show shortcuts
 
 # vim
+Navigation:
+* `%`: go to mathing brace/backet/etc
+
 Comment/uncomment blocks:
-Use block mode: `ctrl-v`. highlight via normal nav. `shift-i + <char>`, `esc`
+Use block mode: `<C-v>`. highlight via normal nav. `shift-i + <char>`, `esc`
 Line comment (or multiple line comments in visual mode): `<leader>c<space>`
 toggles comment
 
 Vertical split: `:vsplit`
-Change between splits: `<ctrl-w> <ctrl-w>`
-
-Git:
-* `:Git <cmd>` (from vim-fugitive plugin) then any git command (including aliases)
-* `:Gblame:`: Git blame interactive vertical split
+Change between splits: `<C-w> <C-w>`
 
 Spelling:
 * `setlocal spell` (enable spell check)
@@ -95,15 +94,22 @@ Spelling:
 
 * `:set ft?`: see the file type detected by vim
 
+Searching:
+* `:grep -r "someregex" .`: search project (I think) for regex. Hit enter and
+use `:copen` to open quickfix menu to navigate
+* `:grep -rF "somestring" .`: search project (I think) for string. Hit enter and
+use `:copen` to open quickfix menu to navigate
+
 ## vim-fugitive
 * `:Gblame` to see git blame info
 * `:help fugitive`
 * `:Gstatus` to bring up output of `git status`
 * `:Ggrep` to search the working tree using `git grep`
-* `:Glog` loads all previous revisions of the file into the quickfix listso you
+* `:Glog` loads all previous revisions of the file into the quickfix list so you
     can iterate over them and watch the file evolve
 * `:Git` to run any arbitrary command `:Git!` to open the output of a command
     in a temp file
+* `<leader>gg`: toggle git gutter
 
 ## rainbow-parenthesis
 * `:RainbowParenthesesToggle       " Toggle it on/off`
@@ -112,16 +118,24 @@ Spelling:
 * `:RainbowParenthesesLoadBraces   " {}`
 * `:RainbowParenthesesLoadChevrons " <>"`
 
-## ctrlp
+## CtrlP
+* `<leader> <leader>`: bring up CtrlP menu
+* `<C-j>`, `<C-k>`: navigate files in menu
+* `<C-t>`, `<C-v>`, `<C-x>`: open file in new tab or split
+* `<C-p>`, `<C-n>`: select previous or next string in prompt's history
 
 ## nerdtree
 * `<C-n>`: toggle NERDTree
+* `m` - bring up menu on selected node to create new directory, file, etc
+* `s`: open file in new vertical split
+* `i`: open file in new horizontal split
+* `R`: refresh the tree
 
 ## syntastic
 
 ## nerdcommenter
-
-## jedi-vim
+* `[cound]<leader>ci`: Toggles the comment state of the selected line(s) individually
+* `[count]<leader>cc`: Comment out the current line or text selected in visual mode
 
 ## vim-indent-guides
 * `<Leader>ig`: toggle plugin

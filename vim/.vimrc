@@ -31,8 +31,6 @@ Plugin 'scrooloose/nerdtree'
 " :Errors to open error window
 " :SyntasticInfo for help
 Plugin 'scrooloose/syntastic'
-" Python autocomplete
-Plugin 'davidhalter/jedi-vim'
 " Comment code
 Plugin 'scrooloose/nerdcommenter'
 " autopep8 utility
@@ -46,9 +44,9 @@ Plugin 'nathanaelkane/vim-indent-guides'
 " Auto-add closing characters
 Plugin 'Raimondi/delimitMate'
 " Status/tabline
-"Plugin 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 " airline themes
-"Plugin 'vim-airline/vim-airline-themes'
+Plugin 'vim-airline/vim-airline-themes'
 " Git gutter
 Plugin 'airblade/vim-gitgutter'
 
@@ -193,3 +191,11 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " GitGutter
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <leader>gg :GitGutterToggle<CR>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Airline
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" show open buffers at top of screen (if there's only one tab open)
+let g:airline#extensions#tabline#enabled = 1
+" use patched font
+let g:airline_powerline_fonts = 1
+let g:airline_theme='solarized'
