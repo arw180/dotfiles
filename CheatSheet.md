@@ -94,6 +94,13 @@ Spelling:
 
 * `:set ft?`: see the file type detected by vim
 
+### Formatting
+* XML (requires `xmllint` is installed from libxml package)
+  * select in visual mode, then in normal mode: `! xmllint --format -` and hit enter
+  * alternatively, `:%!xmllint --format -` to format entire file
+* JSON (requires `jq`)
+  * `:%!jq '.'`
+
 Searching:
 * `:grep -r "someregex" .`: search project (I think) for regex. Hit enter and
 use `:copen` to open quickfix menu to navigate
